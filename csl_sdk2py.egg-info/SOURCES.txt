@@ -1,0 +1,7 @@
+README.md
+setup.py
+csl_sdk2py.egg-info/PKG-INFO
+csl_sdk2py.egg-info/SOURCES.txt
+csl_sdk2py.egg-info/dependency_links.txt
+csl_sdk2py.egg-info/requires.txt
+csl_sdk2py.egg-info/top_level.txt
