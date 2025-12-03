@@ -23,7 +23,7 @@ def csl_pineapple_msg_dds__LowCmd_():
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0], 0, 0, 0)
 
 def csl_pineapple_msg_dds__LowState_():
-    return LowState_([0, 0], 0, 0, [0, 0], [0, 0], 0, csl_pineapple_msg_dds__IMUState_(),
+    return LowState_([0, 0], 0, 0, [0, 0], [0, 0], 0, [csl_pineapple_msg_dds__IMUState_() for i in range(5)],
                 [csl_pineapple_msg_dds__MotorState_() for i in range(20)],
                 [0, 0, 0, 0], [0, 0, 0, 0], 0,
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],

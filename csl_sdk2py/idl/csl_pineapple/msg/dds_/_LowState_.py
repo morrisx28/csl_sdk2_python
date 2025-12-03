@@ -25,7 +25,7 @@ class LowState_(idl.IdlStruct, typename="csl_pineapple.msg.dds_.LowState_"):
     sn: types.array[types.uint32, 2]
     version: types.array[types.uint32, 2]
     bandwidth: types.uint16
-    imu_state: 'csl_sdk2py.idl.csl_pineapple.msg.dds_.IMUState_'
+    imu_state: types.array['csl_sdk2py.idl.csl_pineapple.msg.dds_.IMUState_', 5]
     motor_state: types.array['csl_sdk2py.idl.csl_pineapple.msg.dds_.MotorState_', 20]
     foot_force: types.array[types.int16, 4]
     foot_force_est: types.array[types.int16, 4]

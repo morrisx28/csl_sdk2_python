@@ -17,7 +17,7 @@ class CRC(Singleton):
         # self.__packFmtLowCmd = '<4B4IH2x' + 'B3x5f3I' * 20 + '4B' + '55Bx2I' # '4B' = bms state
         self.__packFmtLowCmd = '<4B4IH2x' + 'B3x5f3I' * 20 + '55Bx2I'
         #size 1180
-        self.__packFmtLowState = '<4B4IH2x' + '13fb3x' + 'B3x7fb3x3I' * 20 + '4BiH4b15H' + '8hI41B3xf2b2x2f4h2I'
+        self.__packFmtLowState = '<4B4IH2x' + '13fb3x' * 5 + 'B3x7fb3x3I' * 20 + '4BiH4b15H' + '8hI41B3xf2b2x2f4h2I'
 
         
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -75,11 +75,12 @@ class CRC(Singleton):
         origData.extend(state.version)
         origData.append(state.bandwidth)
         
-        origData.extend(state.imu_state.quaternion)
-        origData.extend(state.imu_state.gyroscope)
-        origData.extend(state.imu_state.accelerometer)
-        origData.extend(state.imu_state.rpy)
-        origData.append(state.imu_state.temperature)
+        for i in range(5):
+            origData.extend(state.imu_state[i].quaternion)
+            origData.extend(state.imu_state[i].gyroscope)
+            origData.extend(state.imu_state[i].accelerometer)
+            origData.extend(state.imu_state[i].rpy)
+            origData.append(state.imu_state[i].temperature)
         
         for i in range(20):
             origData.append(state.motor_state[i].mode)
